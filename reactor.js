@@ -57,11 +57,30 @@ reactor.directive('rc-in', function() {
 		var prop = element.getAttributeNode('rc-in').value;
 		var inEvent = function() {
 			setTimeout(function() {
-				model[prop] = element.value;
+				var value;
+				if (element.checked !== undefined) {
+					value = element.checked;
+				} else {
+					value = element.value;
+				}
+				if (model[prop] != value) {
+					model[prop] = value;
+					if (model.$depend[prop]) {
+						var depend = model.$depend[prop];
+						for (var i=0; i<depend.length; i++) {
+							for (var k=0; k<model.$out[depend[i]].length; k++) {
+								model.$out[depend[i]][k].innerHTML = model[depend[i]]();
+							}
+
+						}
+					}
+				}
 			}, 1);
 		};
 		element.addEventListener('keydown', inEvent);
 		element.addEventListener('paste', inEvent);
+		element.addEventListener('click', inEvent);
+		inEvent();
 	}
 });
 
@@ -69,15 +88,33 @@ reactor.directive('rc-out', function() {
 	return function(model, element) {
 		console.log('rc-out factory', model, element);
 		var prop = element.getAttributeNode('rc-out').value;
-		if (!model.$out[prop]) {
-			model.$out[prop] = [element];
-			model.__defineSetter__(prop, function (value) {
-				for (var i=0; i<model.$out[prop].length; i++) {
-					model.$out[prop][i].innerHTML = value;
+		var funcReg = /([a-zA-Z0-9_$]+)\(\)(?:=\[((?:(?:[a-zA-Z0-9_$]+),)*(?:[a-zA-Z0-9_$]+)?)\])?/;
+		if (funcReg.test(prop)) {
+			var arr = funcReg.exec(prop);
+			var propName = arr[1];
+			var depend = (arr[2]) ? arr[2].split(',') : [];
+			for (var i=0; i<depend.length; i++) {
+				if(!model.$depend[depend[i]]){
+					model.$depend[depend[i]] = [];
 				}
-			});
+				model.$depend[depend[i]].push(propName);
+				if (!model.$out[prop]) {
+					model.$out[propName] = [element];
+				} else {
+					model.$out[prop].push(element);
+				}
+			}
 		} else {
-			model.$out[prop].push(element);
+			if (!model.$out[prop]) {
+				model.$out[prop] = [element];
+				model.__defineSetter__(prop, function (value) {
+					for (var i=0; i<model.$out[prop].length; i++) {
+						model.$out[prop][i].innerHTML = value;
+					}
+				});
+			} else {
+				model.$out[prop].push(element);
+			}
 		}
 	}
 });
@@ -86,7 +123,7 @@ reactor.directive('rc-model', function() {
 	return function(model, element) {
 		console.log('rc-model factory', model, element);
 		var modelName = element.getAttributeNode('rc-model').value;
-		var newModel = {$out:{}};
+		var newModel = {$out:{},$depend:{}};
 		if (model !== undefined) {
 			newModel.$parent = model;
 		}

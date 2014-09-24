@@ -61,6 +61,25 @@
 
 	</div>
 
+	<div class="rModel" rc-model="threeModel">
+		<h5>Moдель: threeModel</h5>
+		<label> Красный
+			<input type="checkbox" rc-in="red">
+		</label>
+		<label> Зелёный
+			<input type="checkbox" rc-in="green">
+		</label>
+		<label> Синий
+			<input type="checkbox" rc-in="blue">
+		</label>
+		<!--<div>Выбрано:
+			<span rc-out="count() < [red,blue,green]"></span>
+		</div>-->
+		<div>Выбрано вот так:
+			<span rc-out="count()=[red,green,blue]"></span>
+		</div>
+	</div>
+
 	<script src="reactor.js"></script>
 	<script src="model.js"></script>
 </body>
