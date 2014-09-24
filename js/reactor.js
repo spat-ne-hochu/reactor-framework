@@ -9,14 +9,14 @@ var reactor = {
 
 		var elementList = document.querySelectorAll('[rc-model]'), i, currentModel, model;
 		for (i=0; i<elementList.length; i++) {
-			console.log( reactor.$directives['rc-model'] );
+			//console.log( reactor.$directives['rc-model'] );
 			currentModel = reactor.$directives['rc-model'](undefined, elementList[i]);
 			walkDom(elementList[i], currentModel);
 		}
 
 		function walkDom (node, currentModel) {
 			var elementList = node.childNodes, i, k;
-			console.log(elementList);
+			//console.log(elementList);
 			for (i=0; i < elementList.length; i++) {
 				if (elementList[i].nodeType == 1) {
 
@@ -53,12 +53,12 @@ var reactor = {
 
 reactor.directive('rc-in', function() {
 	return function(model, element) {
-		console.log('rc-in factory', model, element);
+		//console.log('rc-in factory', model, element);
 		var prop = element.getAttributeNode('rc-in').value;
 		var inEvent = function() {
 			setTimeout(function() {
 				var value;
-				if (element.checked !== undefined) {
+				if ('checkbox' === element.type) {
 					value = element.checked;
 				} else {
 					value = element.value;
@@ -86,7 +86,7 @@ reactor.directive('rc-in', function() {
 
 reactor.directive('rc-out', function() {
 	return function(model, element) {
-		console.log('rc-out factory', model, element);
+		//console.log('rc-out factory', model, element);
 		var prop = element.getAttributeNode('rc-out').value;
 		var funcReg = /([a-zA-Z0-9_$]+)\(\)(?:=\[((?:(?:[a-zA-Z0-9_$]+),)*(?:[a-zA-Z0-9_$]+)?)\])?/;
 		if (funcReg.test(prop)) {
@@ -121,7 +121,7 @@ reactor.directive('rc-out', function() {
 
 reactor.directive('rc-model', function() {
 	return function(model, element) {
-		console.log('rc-model factory', model, element);
+		//console.log('rc-model factory', model, element);
 		var modelName = element.getAttributeNode('rc-model').value;
 		var newModel = {$out:{},$depend:{}};
 		if (model !== undefined) {
