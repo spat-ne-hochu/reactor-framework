@@ -1,0 +1,86 @@
+{
+  "validateQuoteMarks"                           : "'",
+  "validateParameterSeparator"                   : ", ",
+  "validateLineBreaks"                           : "LF",
+  "validateIndentation"                          : 4,
+  "maximumLineLength"                            : 120,
+
+  /* spaces and lines */
+  "disallowMixedSpacesAndTabs"                   : true,
+  "disallowMultipleLineBreaks"                   : true,
+  "disallowMultipleLineStrings"                  : true,
+  "disallowNewlineBeforeBlockStatements"         : true,
+  "disallowTrailingWhitespace"                   : true,
+  "requireSpaceAfterLineComment"                 : {"allExcept": ["#", "="]},
+
+  /* variables */
+  "disallowDanglingUnderscores"                  : {"allExcept": ["__md5", "__injector"]},
+  "requireCamelCaseOrUpperCaseIdentifiers"       : true,
+  "requireCapitalizedConstructors"               : true,
+  "requireDotNotation"                           : "except_snake_case",
+
+  /* literals */
+  "requireSpaceBeforeObjectValues"               : true,
+  "requireAlignedObjectValues"                   : "all",
+  "disallowQuotedKeysInObjects"                  : true,
+  "disallowSpacesInsideBrackets"                 : true,
+  "disallowSpacesInsideArrayBrackets"            : "nested",
+  "disallowSpacesInsideObjectBrackets"           : "nested",
+  "disallowSpacesInsideParentheses"              : true,
+  "disallowTrailingComma"                        : true,
+  "requireCommaBeforeLineBreak"                  : true,
+
+
+  /* operators */
+  "disallowKeywords"                             : ["with"],
+  "disallowOperatorBeforeLineBreak"              : ["."],
+  "disallowSpaceAfterPrefixUnaryOperators"       : ["++", "--", "+", "-", "~"],
+  "requireSpaceAfterPrefixUnaryOperators"        : ["!"],
+  "disallowSpaceBeforePostfixUnaryOperators"     : ["++", "--"],
+  "disallowYodaConditions"                       : true,
+  "requireOperatorBeforeLineBreak"               : ["=", "+", "-", "/", "*", "==", "===", "!=", "!==", ">", ">=", "<", "<="],
+  "requireSpaceAfterBinaryOperators"             : ["=", "+", "-", "/", "*", "==", "===", "!=", "!==", ">", ">=", "<", "<=", "&", "&&", "|", "||", "^", ","],
+  "requireSpaceBeforeBinaryOperators"            : ["=", "+", "-", "/", "*", "==", "===", "!=", "!==", ">", ">=", "<", "<=", "&", "&&", "|", "||", "^"],
+  "requireSpacesInConditionalExpression"         : {"afterTest": true, "beforeConsequent": true, "afterConsequent": true, "beforeAlternate": true},
+
+  /* block */
+  "disallowEmptyBlocks"                          : true,
+  "requirePaddingNewlinesBeforeKeywords"         : ["do", "for", "if", "switch", "try", "void", "with", "return"],
+  "disallowPaddingNewlinesInBlocks"              : true,
+  "requireBlocksOnNewline"                       : true,
+  "requireCurlyBraces"                           : ["if", "else", "for", "while", "do", "try", "catch"],
+  "requireParenthesesAroundIIFE"                 : true,
+  "requireSpaceAfterKeywords"                    : ["do", "for", "if", "else", "switch", "case", "try", "catch", "void", "while", "with", "return", "typeof"],
+  "requireSpaceBeforeKeywords"                   : ["else", "while", "catch"],
+  "requireSpaceBeforeBlockStatements"            : true,
+
+
+  /* if/else */
+  "disallowKeywordsOnNewLine"                   : ["else"],
+
+  /* loops */
+  "requireSpacesInForStatement"                 : true,
+
+  /* function */
+  "requireSpacesInFunction"                     : {"beforeOpeningCurlyBrace": true},
+  "requireSpacesInFunctionExpression"           : {"beforeOpeningCurlyBrace": true},
+  "requireSpacesInFunctionDeclaration"          : {"beforeOpeningCurlyBrace": true},
+  "requireSpacesInAnonymousFunctionExpression"  : {"beforeOpeningCurlyBrace": true},
+  "requireSpacesInNamedFunctionExpression"      : {"beforeOpeningCurlyBrace": true},
+
+  "disallowSpacesInFunctionExpression"          : {"beforeOpeningRoundBrace": true},
+  "disallowSpacesInFunction"                    : {"beforeOpeningRoundBrace": true},
+  "disallowSpacesInFunctionDeclaration"         : {"beforeOpeningRoundBrace": true},
+  "disallowSpacesInNamedFunctionExpression"     : {"beforeOpeningRoundBrace": true},
+  "disallowSpacesInAnonymousFunctionExpression" : {"beforeOpeningRoundBrace": true},
+
+  "disallowSpacesInCallExpression"              : true,
+  "requireSpaceBetweenArguments"                : true,
+  "requireFunctionDeclarations"                 : true,
+  "requireLineBreakAfterVariableAssignment"     : true,
+
+
+  /* oop */
+  "safeContextKeyword": ["that"]
+}
+

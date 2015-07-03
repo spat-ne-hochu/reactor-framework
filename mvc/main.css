@@ -1,0 +1,52 @@
+* {
+    margin  : 0;
+    padding : 0;
+}
+
+body {
+    font-size : 16px;
+    line-height: 20px;
+    font-family: tahoma, sans-serif;
+}
+
+.cell {
+    padding: 20px;
+    margin: 20px;
+    display: inline-block;
+    background: #f8f8f8;
+    font-size: 0;
+}
+
+.cell > * {
+    vertical-align: top;
+    display: inline-block;
+    font-size : 16px;
+}
+
+.button {
+    padding: 4px;
+    border: none;
+    background: #cccccc;
+    color: #333333;
+    height: 60px;
+    width: 30px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #aaaaaa;
+}
+
+.monitor {
+    background: #222;
+    color: #0c0;
+    height: 60px;
+    width: 60px;
+    line-height: 40px;
+    font-size: 40px;
+    padding: 10px;
+    text-align: center;
+    box-sizing: border-box;
+}

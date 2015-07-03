@@ -1,9 +1,10 @@
-code = function() {
+'use strict';
 
-	var model = reactor.model('threeModel');
-	model.count = function() {
-		return model['red'] + model['green'] + model['blue'];
-	}
-};
+function main() {
+    var model   = reactor.model('threeModel');
+    model.count = function() {
+        return model.red + model.green + model.blue;
+    };
+}
 
-document.addEventListener("DOMContentLoaded", code, false);
+document.addEventListener('DOMContentLoaded', main, false);
