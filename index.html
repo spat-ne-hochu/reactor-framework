@@ -1,51 +1,23 @@
 <!DOCTYPE html>
-<html>
+<html lang="ru">
 <head>
-	<meta charset="utf-8">
-	<title>Reactor: two way binding</title>
-	<link rel="stylesheet" href="css/style.css">
+    <meta charset="UTF-8">
+    <title></title>
+    <link href="styles/main.css" rel="stylesheet">
 </head>
 <body>
-	<h2>Reactor: two way binding</h2>
-	<div class="rModel" rc-model="firstModel">
-		<h5>Moдель: firstModel</h5>
-		<input rc-in="name" value="Петя">
-		<div rc-out="name"></div>
-	</div>
-
-	<div class="rModel" rc-model="firstModel">
-		<h5>Moдель: firstModel_1</h5>
-		<input rc-in="name" value="Вася">
-		<div rc-out="name"></div>
-
-		<div class="rModel" rc-model="secondModel">
-			<h5>Moдель: secondModel</h5>
-			<input rc-in="name" value="Маша">
-			<div rc-out="name"></div>
-		</div>
-
-	</div>
-
-	<div class="rModel" rc-model="threeModel">
-		<h5>Moдель: threeModel</h5>
-		<label> Красный
-			<input type="checkbox" rc-in="red">
-		</label>
-		<label> Зелёный
-			<input type="checkbox" rc-in="green">
-		</label>
-		<label> Синий
-			<input type="checkbox" rc-in="blue">
-		</label>
-		<!--<div>Выбрано:
-			<span rc-out="count() < [red,blue,green]"></span>
-		</div>-->
-		<div>Выбрано (как надо):
-			<span rc-out="count()=[red,green,blue]"></span>
-		</div>
-	</div>
-
-	<script src="js/reactor.js"></script>
-	<script src="js/model.js"></script>
+    <div class="tplOne">
+        <div class="cell">
+            <button class="button">+</button>
+            <div class="monitor"></div>
+            <button class="button">-</button>
+        </div>
+        <div class="sum"></div>
+    </div>
+    <script src="vendor/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.rawgit.com/jquery/esprima/1.2/esprima.js"></script>
+    <script src="js/reactor/reactor.js"></script>
+    <script src="js/bindings/bind.js"></script>
+    <script src="js/controllers/controller.js"></script>
 </body>
 </html>
