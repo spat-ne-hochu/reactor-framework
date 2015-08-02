@@ -1,0 +1,93 @@
+* {
+    margin  : 0;
+    padding : 0;
+}
+
+body {
+    font-size : 16px;
+    line-height: 20px;
+    font-family: tahoma, sans-serif;
+}
+
+.row {
+    background: #eee;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+    margin: 0;
+    font-size: 0;
+}
+
+.row > * {
+    vertical-align: middle;
+    display: inline-block;
+    font-size : 16px;
+}
+
+.text-field {
+    padding: 6px;
+    border-radius: 4px;
+    font-size: 14px;
+    line-height: 20px;
+    height: 20px;
+    border: 1px solid #ddd;
+    width: 50px;
+}
+
+.cell {
+    padding: 5px;
+    margin: 0;
+    display: inline-block;
+    background: #f8f8f8;
+    font-size: 0;
+}
+
+.cell > * {
+    vertical-align: top;
+    display: inline-block;
+    font-size : 16px;
+}
+
+.button {
+    padding: 4px;
+    border: none;
+    background: #cccccc;
+    color: #333333;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background: #aaaaaa;
+}
+
+.monitor {
+    background: #222;
+    color: #0c0;
+    height: 30px;
+    width: 60px;
+    line-height: 24px;
+    font-size: 24px;
+    padding: 3px;
+    text-align: center;
+    box-sizing: border-box;
+}
+
+.sum {
+    vertical-align: top;
+    display: inline-block;
+    font-size: 30px;
+    color: #444;
+    padding: 10px;
+    background: #f8f8f8;
+    border-radius: 4px;
+}
+
+.operator {
+    font-size: 20px;
+    line-height: 20px;
+    margin: 0 9px;
+    color: #888;
+}
