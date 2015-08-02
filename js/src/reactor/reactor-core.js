@@ -10,16 +10,16 @@ window.rc = window.reactor = (function() {
 
     var __lastScopeId = 0;
 
-    function isInputableNode(element) {
+    function isInteractiveNode(element) {
         return !! ~['INPUT', 'TEXTAREA'].indexOf(element[0].tagName);
     }
 
     function getNodeValue(element) {
-        return isInputableNode(element) ? element.val() : element.text();
+        return isInteractiveNode(element) ? element.val() : element.text();
     }
 
     function setNodeValue(element, value) {
-        isInputableNode(element) ? element.val(value) : element.text(value);
+        isInteractiveNode(element) ? element.val(value) : element.text(value);
     }
 
     function __Scope() {
