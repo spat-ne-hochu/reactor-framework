@@ -1,6 +1,6 @@
 {
   "name": "reactor-framework",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "reactive framework",
   "main": "js/src/reactor/reactor-core.js",
   "devDependencies": {
@@ -17,12 +17,12 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/spat-ne-hochu/reactor.git"
+    "url": "https://github.com/spat-ne-hochu/reactor-framework.git"
   },
   "author": "",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/spat-ne-hochu/reactor/issues"
+    "url": "https://github.com/spat-ne-hochu/reactor-framework/issues"
   },
-  "homepage": "https://github.com/spat-ne-hochu/reactor"
+  "homepage": "http://spat-ne-hochu.github.io/reactor-framework/"
 }
