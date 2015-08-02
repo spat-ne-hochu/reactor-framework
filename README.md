@@ -1,6 +1,8 @@
 # reactor-framework
 very fast reactive MVVM framework
 
+demo: http://spat-ne-hochu.github.io/reactor-framework/
+
 ## cold start
 
 ##### 1. You need template (html)
@@ -84,3 +86,6 @@ var bindingOne = [
 ```javascript
 rc.getControllerInstance('ExampleController').bind('.tplOne', bindingOne);
 ```
+
+##### 5. Show demo
+http://spat-ne-hochu.github.io/reactor-framework/
