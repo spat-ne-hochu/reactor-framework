@@ -20,5 +20,10 @@ window.bindingOne = [
         selector  : '.sum',
         directive : 'bind',
         path      : 'sum'
+    },
+    {
+        selector  : '.text-field',
+        directive : '<=>',
+        path      : 'base'
     }
 ];
