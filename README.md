@@ -78,6 +78,7 @@ var bindingOne = [
         path      : 'base'
     }
 ];
+```
 
 ##### 4. And run it!
 ```javascript
